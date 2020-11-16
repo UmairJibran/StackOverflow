@@ -100,7 +100,8 @@ public class MainActivity extends AppCompatActivity {
                                 int questionScore = item.getInt("score");
                                 String tags = item.getString("tags");
                                 String url = item.getString("link");
-                                    if(tags.matches(".*"+qTag+".*") && questionScore >= score){
+                                Boolean isAnswered = item.getBoolean("is_answered");
+                                    if(!isAnswered && tags.matches(".*"+qTag+".*") && questionScore >= score){
                                         arrayList.add(title);
                                         urls.add(url);
                                     }
